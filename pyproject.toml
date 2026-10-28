@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openai-compatible-checker-cli"
+version = "0.1.0"
+description = "Local-first CLI smoke test for OpenAI-compatible endpoints (Ollama, LM Studio, Kilo Gateway): models list, chat completion, token count."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "Asdale Dynamics, LLC"}]
+keywords = ["openai", "ollama", "lm-studio", "kilo-gateway", "cli", "local-ai", "mock-server"]
+
+[project.scripts]
+openai-checker = "openai_checker.__main__:main"
+
+[tool.setuptools]
+packages = ["openai_checker", "tests"]
+
+[tool.setuptools.package-data]
+openai_checker = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
