@@ -1,8 +1,12 @@
-__pycache__/
-*.py[cod]
 *.egg-info/
+*.py[cod]
+*.pyc
 .dist/
-build/
-.venv/
-venv/
 .env
+.env.*
+.venv/
+__pycache__/
+build/
+dist/*.tmp
+node_modules/
+venv/
